@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="icon" href="favicon.ico" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <link rel="stylesheet" href="asset/css/style.css">
+
+  <title>Technical Documentation Page</title>
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+  <!-- NAV -->
+  <nav id="navbar">
+    <header id="main-title">
+      <div class="logo">
+        <img src="https://developer.mozilla.org/static/img/opengraph-logo.72382e605ce3.png" />
+      </div>
+    </header>
+    <ul>
+      <a class="nav-link" href="#le_placement_automatique_sur_une_grille_css" rel="internal">
+        <li>Le placement automatique sur une grille CSS</li>
+      </a>
+      <a class="nav-link" href="#les_concepts_de_base_des_grilles_css" rel="internal">
+        <li>Les concepts de base des grilles CSS</li>
+      </a>
+      <a class="nav-link" href="#l'alignement_des_boîtes_avec_les_grilles_css" rel="internal">
+        <li>L'alignement des boîtes avec les grilles CSS</li>
+      </a>
+      <a class="nav-link" href="#les_grilles_css_et_l'accessibilité" rel="internal">
+        <li>Les grilles CSS et l'accessibilité</li>
+      </a>
+      <a class="nav-link" href="#les_grilles_css_et_l'amélioration_progressive" rel="internal">
+        <li>Les grilles CSS et l'amélioration progressive</li>
+      </a>
+    </ul>
+  </nav>
+
+  <!-- MAIN -->
+  <main id="main-doc" class="grid">
+    <div class="col-12">
+      <section class="main-section" id="le_placement_automatique_sur_une_grille_css">
+        <header>Le placement automatique sur une grille css</header>
+        <article>
+          <p>En plus de pouvoir placer des objets de façon précise sur une grille, la spécification pour les grilles CSS
+            définit le comportement obtenu lorsque certains des objets ne sont pas placés sur la grille (voire aucun).
+          </p>
+          <p>Pour voir comment fonctionne le placement automatique, il suffit de créer une grille avec un ensemble
+            d'objets. Sans fournir aucune information de placement, ces objets se placeront chacun sur une cellule de la
+            grille.</p>
+          <li>On peut utiliser la fonction minmax() pour la valeur de grid-auto-rows afin de créer des lignes avec une
+            taille minimale</li>
+          <pre>
+            <code>
+              .wrapper {
+                 display: grid;
+                 grid-template-columns: repeat(3, 1fr);
+                 grid-gap: 10px;
+                }
+            </code>
+          </pre>
+        </article>
+        <hr>
+      </section>
+      <section class="main-section" id="les_concepts_de_base_des_grilles_css">
+        <header>Les concepts de base des grilles css</header>
+        <article>
+          <p>Le module CSS Grid Layout ajoute à CSS une grille à deux dimensions. Les grilles peuvent être utilisées
+            pour agencer des pages entières ou de petits éléments d'interface.</p>
+          <p>Cet article introduit CSS Grid Layout, et la terminologie de la spécification CSS Grid Layout Level 1. Les
+            fonctionnalités évoquées seront expliquées plus en détail dans le reste du guide.</p>
+          <li>Une grille est un ensemble de lignes horizontales et verticales qui se croisent – les premières
+            définissant les rangées, et les secondes les colonnes.</li>
+          <pre>
+            <code>
+              .wrapper {
+                display: grid;
+              }
+            </code>
+          </pre>
+        </article>
+        <hr>
+      </section>
+      <section class="main-section" id="l'alignement_des_boîtes_avec_les_grilles_css">
+        <header>L'alignement des boîtes avec les grilles css</header>
+        <article>
+          <p>Si vous connaissez les boîtes flexibles (flexbox) vous savez déjà comment aligner les éléments flexibles à
+            l'intérieur d'un conteneur flexible.</p>
+          <p>Ces propriétés d'alignement, initialement spécifiée dans la spécification des boîtes flexibles, sont
+            désormais spécifiées dans une nouvelle spécification Box Alignment Level 3. Cette spécification détaille le
+            fonctionnement de l'alignement pour les différentes méthodes de disposition.</p>
+          <li>Chaque méthode de disposition qui implémente cette nouvelle spécification se comportera légèrement
+            différemment selon les différences de contraintes et de fonctionnalités (et aussi selon le comportement
+            historique).</li>
+          <pre>
+            <code>
+              .wrapper {
+                display: grid;
+                grid-template-columns: repeat(8, 1fr);
+                grid-gap: 10px;
+                grid-auto-rows: 100px;
+                align-items: start;
+            </code>
+          </pre>
+        </article>
+        <hr>
+      </section>
+      <section class="main-section" id="les_grilles_css_et_l'accessibilité">
+        <header>Les grilles css et l'accessibilité</header>
+        <article>
+          <p>Pour celles et ceux qui étaient présents aux premières lueurs du Web, les grilles CSS peuvent rappeler
+            l'âge sombre où les tableaux HTML étaient utilisés pour la mise en forme des pages et où les cellules
+            étaient utilisées pour diviser le contenu.</p>
+          <p>Cette approche avait quelques avantages par rapport au positionnement CSS apparu après : on pouvait tirer
+            parti de l'alignement et des colonnes créées dans un tableau.</p>
+          <li>Il y a toutefois un inconvénient majeur : la mise en forme est fortement couplée à la structure du
+            document, entraînant certains problèmes d'accessibilité. On pouvait par exemple découper le contenu dans le
+            tableau afin d'obtenir la mise en forme souhaitée mais la structure de la page n'avait plus aucun sens
+            lorsqu'elle était lue par un lecteur d'écran.</li>
+          <pre>
+            <code>
+              .wrapper {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-auto-rows: 100px;
+               }
+
+              .box1 {
+                grid-column: 1;
+                grid-row: 2;
+               }
+            </code>
+          </pre>
+        </article>
+        <hr>
+      </section>
+      <section class="main-section" id="les_grilles_css_et_l'amélioration_progressive">
+        <header>Les grilles css et l'amélioration progressive</header>
+        <article>
+          <p>Au printemps 2017, on voit pour la première fois une spécification majeure être disponible presque
+            simultanément dans différents navigateurs : les grilles CSS (CSS Grid). Les grilles CSS sont disponibles
+            dans les versions récentes de Firefox, Chrome, Opera, Safari et Edge. </p>
+          <p>Malgré cela, si ces navigateurs récents permettront à la plupart d'entre nous de profiter de ces nouvelles
+            fonctionnalités, il existe d'anciens navigateurs ou d'autres navigateurs qui ne prennent pas en charge ces
+            fonctionnalité.</p>
+          <li>Dans ce guide, nous allons parcourir différentes stratégies pour gérer cette prise en charge.</li>
+          <pre>
+              <code>
+                img {
+                  max-width: 100%;
+                  display: block;
+                }
+                .media {
+                  border: 2px solid #f76707;
+                  border-radius: 5px;
+                  background-color: #fff4e6;
+                  max-width: 400px;
+                  display: grid;
+                  grid-template-columns: 1fr 2fr;
+                  grid-template-areas: "img content";
+                  margin-bottom: 1em;
+                }
+              </code>
+            </pre>
+        </article>
+      </section>
+    </div>
+  </main>
+
+
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+
+</html>

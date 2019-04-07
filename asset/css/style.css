@@ -1,0 +1,93 @@
+@media only screen and (min-width: 465px) {
+	#main-doc {
+		font-size: 16px;
+	}
+}
+
+#main-doc {
+	padding-left: 280px;
+	padding-top: 3.6%;
+	width: 75%;
+	margin: 0 auto;
+}
+
+#navbar {
+	position: fixed;
+	height: 100vh;
+	width: 280px;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-gap: 2px;
+}
+
+.col-12 {
+	grid-column: span 12;
+}
+
+nav>ul>a {
+	color: #3d7e9a;
+	margin: 60%;
+	text-decoration: none;
+	list-style: none;
+}
+
+nav>ul>a:hover {
+	text-decoration: underline;
+}
+
+.main-section {
+	margin-left: 2%;
+}
+
+header {
+	font-size: 29px;
+	font-weight: bold;
+}
+
+hr {
+	margin: 4%;
+	border: 2px solid #3d7e9a;
+}
+
+pre {
+	background: #eee;
+	border-left: 10px solid #3d7e9a;
+	margin-top: 2%;
+	overflow: scroll;
+}
+
+code {
+	padding-left: -12%;
+}
+
+li {
+	margin-top: 2%;
+}
+
+.logo {
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.logo>img {
+	margin-top: 8%;
+	margin-bottom: -9%;
+	width: 80px;
+}
+
+@media screen and (max-width: 800px) {
+	#navbar {
+		position: absolute;
+		width: 100%;
+		height: 450px;
+		background: #eee;
+	}
+	#main-doc {
+		padding-left: 0;
+		padding-top: 500px;
+		width: 90%;
+	}
+}

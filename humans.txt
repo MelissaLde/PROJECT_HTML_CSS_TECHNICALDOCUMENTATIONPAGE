@@ -1,0 +1,11 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    melissa linde -- linde.melissa34@gmail.com
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5
+    Normalize.css
